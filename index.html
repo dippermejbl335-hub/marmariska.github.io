@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <title>Qarzhy Bilim</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #3b82f6;
+            --secondary: #eef5ff;
+            --text: #1e293b;
+            --card: #ffffff;
+            --shadow: rgba(0,0,0,0.1); /* Көбірек көлеңке үшін */
+            --gradient: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%); /* Градиент қосу */
+        }
+
+        body {
+            margin: 0;
+            font-family: "Inter", sans-serif;
+            background: var(--secondary);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background: var(--card);
+            padding: 20px 40px;
+            box-shadow: 0 4px 20px var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        /* Hero section */
+        .hero {
+            padding: 80px 40px;
+            text-align: center;
+            background: var(--gradient); /* Жаңа градиенттік фон */
+            color: var(--card);
+        }
+
+        .hero h1 {
+            font-size: 56px; /* Үлкенірек шрифт */
+            font-weight: 900;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.15); /* Мәтінге көлеңке қосу */
+        }
+
+        .hero p {
+            font-size: 20px;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            opacity: 0.95;
+        }
+
+        /* Hero GIF / Animation Area */
+        .hero-visual {
+            margin-top: 40px;
+            padding: 20px 0;
+            animation: fadeIn 1s ease-out; /* Кіріс анимациясы */
+        }
+
+        /* Егер GIF пайдалансаңыз */
+        .hero-gif {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.2);
+        }
+
+        /* "Төмен қарай жылжыту" көрсеткісі (Arrow) */
+        .scroll-down-arrow {
+            display: inline-block;
+            margin-top: 30px;
+            font-size: 30px;
+            color: var(--card);
+            animation: bounce 2s infinite; /* Секуім анимациясы */
+        }
+
+        /* Card container */
+        .section {
+            padding: 60px 40px;
+        }
+        
+        .section h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 50px;
+            color: var(--primary);
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Карточкаларды үлкенірек ету */
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--card);
+            padding: 30px; /* Көбірек ішкі шегініс */
+            border-radius: 20px;
+            box-shadow: 0 8px 25px var(--shadow);
+            transition: 0.4s ease-in-out;
+            border-left: 5px solid var(--primary); /* Әдемі сызық */
+        }
+
+        .card:hover {
+            transform: translateY(-8px) scale(1.02); /* Көбірек көтерілу */
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+
+        .card h3 {
+            color: var(--primary);
+            margin-top: 15px;
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+
+        .card p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        
+        /* Икона стилі */
+        .card-icon {
+            font-size: 40px;
+            color: var(--primary);
+            margin-bottom: 10px;
+            opacity: 0.8;
+            transition: 0.3s;
+        }
+        
+        .card:hover .card-icon {
+            opacity: 1;
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: var(--text);
+            color: var(--secondary);
+            font-size: 14px;
+        }
+        
+        /* Анимациялар */
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-15px);
+            }
+            60% {
+                transform: translateY(-7px);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Мобильді құрылғыларға арналған бейімделу */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 40px;
+            }
+            .hero {
+                padding: 60px 20px;
+            }
+            header {
+                padding: 15px 20px;
+            }
+            .section {
+                padding: 40px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">Qarzhy Bilim</div>
+</header>
+
+<section class="hero">
+    <h1>Қаржылық сауаттылық – Сенің Болашағың</h1>
+    <p>
+        Бұл сайт қарапайым адамдар үшін қаржылық білімді түсінікті, жеңіл және қолжетімді етуге арналған.
+        Жұмсақ түстер, жеңіл дизайн және нақты ақпарат – бәрі сіз үшін.
+    </p>
+
+    <div class="hero-visual">
+        <i class="fas fa-hand-holding-usd" style="font-size: 100px; color: white;"></i> 
+        
+        <div class="scroll-down-arrow">
+             <i class="fas fa-arrow-down"></i>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <h2>🚀 Білім Бөлімдері</h2>
+    <div class="cards">
+        
+        <div class="card">
+            <i class="fas fa-lightbulb card-icon"></i> <h3>Негізгі қаржы түсініктері</h3>
+            <p>
+                Активтер, пассивтер, капитал, инфляция, инвестиция, пайыздық ставкалар және басқа да негізгі ұғымдарға
+                түсінікті тілмен анықтама беріледі.
+            </p>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-wallet card-icon"></i> <h3>Жеке бюджет құру</h3>
+            <p>
+                Ай сайынғы табыс пен шығындарды жоспарлау, 50/30/20 әдісі, қаржылық тәртіп қалыптастыру жолдары.
+            </p>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-chart-line card-icon"></i> <h3>Инвестициялар</h3>
+            <p>
+                Қарапайым инвестиция түрлерінен бастап, тәуекелдерді басқаруға дейінгі ақпарат.
+            </p>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-piggy-bank card-icon"></i> <h3>Жинақ және депозиттер</h3>
+            <p>
+                Әртүрлі депозит түрлері, пайыздық мөлшерлемелер және тиімді жинақ стратегиялары.
+            </p>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-shield-alt card-icon"></i> <h3>Қаржылық қауіпсіздік</h3>
+            <p>
+                Қарыздардан аулақ болу, алаяқтықтан қорғану, төтенше жағдай қорын құру.
+            </p>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-brain card-icon"></i> <h3>Қаржы психологиясы</h3>
+            <p>
+                Ақшаны дұрыс қабылдау, эмоциялық шығындарды басқару, дұрыс қаржылық әдеттер қалыптастыру.
+            </p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    © 2025 Qarzhy Bilim — Қаржылық білім бәріне қолжетімді
+</footer>
+
+</body>
+</html>
